@@ -31,7 +31,7 @@ st.sidebar.markdown('---')
 st.sidebar.subheader('Select Company')
 
 
-ticker_list_raw = pd.read_excel('https://github.com/Python-basics/Tutorials/blob/master/company_list.xlsx')
+ticker_list_raw = pd.read_csv('https://github.com/NeilShah2026/stockly/blob/main/company_list.csv')
 ticker_list = ticker_list_raw['Symbol'].values.tolist()
 tickerSymbol = st.sidebar.selectbox('Stock ticker', ticker_list, index=40) # Select ticker symbol
 tickerData = yf.Ticker(tickerSymbol) # Get ticker data
