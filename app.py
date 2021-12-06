@@ -83,7 +83,7 @@ st.write('---')
 # Bollinger bands
 st.header('**Query Chart**')
 st.write(tickerDf)
-qf=cf.QuantFig(tickerDf,title=f'{tickerSymbol} Query Chart',legend='top',name='GS')
+qf=cf.QuantFig(tickerDf,title=f'{text_box} Query Chart',legend='top',name='GS')
 qf.add_bollinger_bands()
 fig2 = qf.iplot(asFigure=True)
 st.plotly_chart(fig2)
