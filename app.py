@@ -29,11 +29,11 @@ st.sidebar.markdown('---')
 
 # Retrieving tickers data
 st.sidebar.subheader('Select Company')
-df = pd.read_excel('company_list.xlsx')
-symbols = df['Symbol'].values.tolist()
 
-ticker_list = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/s-and-p-500-companies/master/data/constituents_symbols.txt')
-tickerSymbol = st.sidebar.selectbox('Stock ticker', symbols, index=40) # Select ticker symbol
+
+ticker_list_raw = pd.read_excel('https://github.com/Python-basics/Tutorials/blob/master/company_list.xlsx')
+ticker_list = ticker_list_raw['Symbol'].values.tolist()
+tickerSymbol = st.sidebar.selectbox('Stock ticker', ticker_list, index=40) # Select ticker symbol
 tickerData = yf.Ticker(tickerSymbol) # Get ticker data
 tickerDf = tickerData.history(period='1d', start=start_date, end=end_date) #get the historical prices for this ticker
 
