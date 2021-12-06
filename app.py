@@ -29,7 +29,7 @@ st.sidebar.markdown('---')
 
 # Retrieving tickers data
 st.sidebar.subheader('Select Company')
-df = pd.read_exel('company_list.xlsx')
+df = pd.read_excel('company_list.xlsx')
 symbols = df['Symbol'].values.tolist()
 
 ticker_list = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/s-and-p-500-companies/master/data/constituents_symbols.txt')
