@@ -20,6 +20,7 @@ Shown are the stock price data for query companies!
 st.write('---')
 
 
+
 # Sidebar
 st.sidebar.subheader('Select Search Date')
 start_date = st.sidebar.date_input("Start date", datetime.date(2019, 1, 1))
@@ -28,8 +29,11 @@ st.sidebar.markdown('---')
 
 # Retrieving tickers data
 st.sidebar.subheader('Select Company')
+df = pd.read_exel('company_list.xlsx')
+symbols = df['Symbol'].values.tolist()
+
 ticker_list = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/s-and-p-500-companies/master/data/constituents_symbols.txt')
-tickerSymbol = st.sidebar.selectbox('Stock ticker', ticker_list, index=40) # Select ticker symbol
+tickerSymbol = st.sidebar.selectbox('Stock ticker', symbols, index=40) # Select ticker symbol
 tickerData = yf.Ticker(tickerSymbol) # Get ticker data
 tickerDf = tickerData.history(period='1d', start=start_date, end=end_date) #get the historical prices for this ticker
 
