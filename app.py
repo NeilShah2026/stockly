@@ -31,9 +31,9 @@ st.sidebar.markdown('---')
 st.sidebar.subheader('Select Company')
 
 text_box = st.sidebar.text_input("Stock Ticker")
-ticker_list_raw = pd.read_excel('https://github.com/NeilShah2026/stockly/blob/main/company_list.xlsx')
-ticker_list = ticker_list_raw['Symbol'].values.tolist()
-tickerSymbol = st.sidebar.selectbox('Stock ticker', ticker_list, index=40) # Select ticker symbol
+# ticker_list_raw = pd.read_excel('https://github.com/NeilShah2026/stockly/blob/main/company_list.xlsx')
+# ticker_list = ticker_list_raw['Symbol'].values.tolist()
+# tickerSymbol = st.sidebar.selectbox('Stock ticker', ticker_list, index=40) # Select ticker symbol
 
 tickerData = yf.Ticker(tickerSymbol) # Get ticker data
 tickerDf = tickerData.history(period='1d', start=start_date, end=end_date) #get the historical prices for this ticker
