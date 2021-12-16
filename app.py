@@ -82,7 +82,7 @@ st.write('---')
 
 # Past Year
 yearbefore = end_date - datetime.timedelta(days=365)
-st.deader('**Past Year**')
+st.header('**Past Year**')
 pasy_year = tickerData.history(perdiod='1d', start = yearbefore, end = end_date)
 st.write(past_year)
 d2 = cf.QuantFig(past_year, title=f'{tickerDr} Past Year', legend='top', name='GS')
