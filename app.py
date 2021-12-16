@@ -70,12 +70,25 @@ st.write('---')
 # Past Month Data
 monthbefore = end_date - datetime.timedelta(days=30)
 st.header('**Past Month**')
-past_week = tickerData.history(period='1d', start=monthbefore, end=end_date)
-st.write(past_week)
-d1 = cf.QuantFig(past_week, title=f'{tickerDf} Past Month', legend='top', name='GS')
+past_month = tickerData.history(period='1d', start=monthbefore, end=end_date)
+st.write(past_month)
+d1 = cf.QuantFig(past_month, title=f'{tickerDf} Past Month', legend='top', name='GS')
 d1.add_bollinger_bands()
 fig = d1.iplot(asFigure=True)
 st.plotly_chart(fig)
+
+# Break
+st.write('---')
+
+# Past Year
+yearbefore = end_date - datetime.timedelta(days=365)
+st.deader('**Past Year**')
+pasy_year = tickerData.history(perdiod='1d', start = yearbefore, end = end_date)
+st.write(past_year)
+d2 = cf.QuantFig(past_year, title=f'{tickerDr} Past Year', legend='top', name='GS')
+d2.add_bollinger_bands()
+fig_write = d2.iplot(asFigure=True)
+st.ploty_chart(fig)
 
 # Break
 st.write('---')
