@@ -88,7 +88,7 @@ st.write(past_year)
 d2 = cf.QuantFig(past_year, title=f'{tickerDf} Past Year', legend='top', name='GS')
 d2.add_bollinger_bands()
 fig_write = d2.iplot(asFigure=True)
-st.ploty_chart(fig_write)
+st.plotly_chart(fig_write)
 
 # Break
 st.write('---')
