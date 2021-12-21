@@ -43,7 +43,7 @@ df = first_table
 
 symbols = df['Symbol'].values.tolist()
 
-text_box = st.sidebar.text_input("Stock Ticker", value="AAPL", max_chars=5, help="Enter The Companies Ticker", placeholder = random.choice(symbols))
+text_box = st.sidebar.text_input("Stock Ticker", max_chars=5, help="Enter The Companies Ticker", placeholder = random.choice(symbols))
 # ticker_list_raw = pd.read_excel('https://github.com/NeilShah2026/stockly/blob/main/company_list.xlsx')
 # ticker_list = ticker_list_raw['Symbol'].values.tolist()
 # tickerSymbol = st.sidebar.selectbox('Stock ticker', ticker_list, index=40) # Select ticker symbol
