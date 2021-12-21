@@ -15,7 +15,8 @@ st.sidebar.markdown('---')
 st.markdown('''
 # Stockly: A Stock Market Analysis App By InSight3D
 Shown are the stock price data for query companies!
-</br>
+
+
 Update: You will now get a random ticker as a place holder every time you press into the Stock Ticker feild!
 
 - App built by [Neil Shah](https://neilshahdev.tk) &  [InSight3D](http://insight3d.tech)
