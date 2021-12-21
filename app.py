@@ -16,9 +16,6 @@ st.markdown('''
 # Stockly: A Stock Market Analysis App By InSight3D
 Shown are the stock price data for query companies!
 
-
-Update: You will now get a random ticker as a place holder every time you press into the Stock Ticker feild!
-
 - App built by [Neil Shah](https://neilshahdev.tk) &  [InSight3D](http://insight3d.tech)
 - Built in `Python` using `streamlit`,`yfinance`, `cufflinks`, `pandas` and `datetime`
 ''')
@@ -35,15 +32,8 @@ st.sidebar.markdown('---')
 # Retrieving tickers data
 st.sidebar.subheader('Select Company')
 
-payload=pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')
-first_table = payload[0]
-second_table = payload[1]
 
-df = first_table
-
-symbols = df['Symbol'].values.tolist()
-
-text_box = st.sidebar.text_input("Stock Ticker", max_chars=5, help="Enter The Companies Ticker", placeholder = random.choice(symbols))
+text_box = st.sidebar.text_input("Stock Ticker", value="AMZN", max_chars=5, help="Enter The Companies Ticker", placeholder = "AMZN")
 # ticker_list_raw = pd.read_excel('https://github.com/NeilShah2026/stockly/blob/main/company_list.xlsx')
 # ticker_list = ticker_list_raw['Symbol'].values.tolist()
 # tickerSymbol = st.sidebar.selectbox('Stock ticker', ticker_list, index=40) # Select ticker symbol
